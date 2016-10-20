@@ -1,0 +1,19 @@
+{
+  "name": "server-frame-dummy-service",
+  "version": "1.0.0",
+  "description": "Dummy service plugin for Hapi",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab --pattern test -r console -v"
+  },
+  "author": "Mircea Alexandru",
+  "dependencies": {
+    "joi": "^9.2.0"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
