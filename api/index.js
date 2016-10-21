@@ -10,7 +10,6 @@ let applyRoutes = function (server, next) {
 		config: {
 			description: 'Just a dummy service that will complete successfully',
 			tags: ['dummy', 'service'],
-			auth: false,
 			response: {
 				failAction: 'log',
 				status: {
@@ -20,6 +19,20 @@ let applyRoutes = function (server, next) {
 		},
 		handler: (request, reply) => {
 			Service.executeServiceSuccess(request, reply);
+		}
+	});
+
+	server.route({
+		method: 'GET',
+		path: '/ping',
+		config: {
+			description: 'Just a dummy service',
+			tags: ['dummy', 'service'],
+			auth: false
+		},
+		handler: (request, reply) => {
+			console.log('MESSAGE');
+			reply({pong: true});
 		}
 	});
 
